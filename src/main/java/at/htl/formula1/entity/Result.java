@@ -11,7 +11,9 @@ import java.io.Serializable;
 @Entity
 @Table(name = "F1_RESULT")
 @NamedQueries({
-        @NamedQuery(name = "Result.getPointsSumOfDriver", query = "select sum(r.points) from Result r where r.driver = :DRIVER")
+        @NamedQuery(name = "Result.getPointsSumOfDriver", query = "select sum(r.points) from Result r where r.driver = :DRIVER"),
+        @NamedQuery(name = "Result.findWinnerOfRace", query = "select r1.driver from Result r1 where r1.race = :RACE " +
+                "and r1.points >= all(select max(r2.points) from Result r2 where r2.race=r1.race)")
 })
 public class Result implements Serializable {
 
