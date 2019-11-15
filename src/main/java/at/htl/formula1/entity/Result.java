@@ -1,6 +1,7 @@
 package at.htl.formula1.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Formula1 - Result
@@ -9,7 +10,10 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "F1_RESULT")
-public class Result {
+@NamedQueries({
+        @NamedQuery(name = "Result.getPointsSumOfDriver", query = "select sum(r.points) from Result r where r.driver = :DRIVER")
+})
+public class Result implements Serializable {
 
     @Transient
     public int[] pointsPerPosition = {0, 25, 18, 15, 12, 10, 8, 6, 4, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
