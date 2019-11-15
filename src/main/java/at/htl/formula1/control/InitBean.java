@@ -50,7 +50,6 @@ public class InitBean {
      */
     private void readRacesFromFile(String racesFileName) {
 
-
     }
 
     /**
