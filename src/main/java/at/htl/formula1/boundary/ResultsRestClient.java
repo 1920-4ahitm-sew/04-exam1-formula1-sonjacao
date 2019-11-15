@@ -18,7 +18,6 @@ import javax.ws.rs.core.Response;
 
 public class ResultsRestClient {
 
-
     @PersistenceContext
     EntityManager em;
 
@@ -75,41 +74,7 @@ public class ResultsRestClient {
             result.setDriver(driver);
             result.setRace(race);
             result.setPosition(resultJson.getInt("position"));
-
-            switch (result.getPosition()) {
-                case 1:
-                    result.setPoints(25);
-                    break;
-                case 2:
-                    result.setPoints(18);
-                    break;
-                case 3:
-                    result.setPoints(15);
-                    break;
-                case 4:
-                    result.setPoints(12);
-                    break;
-                case 5:
-                    result.setPoints(10);
-                    break;
-                case 6:
-                    result.setPoints(8);
-                    break;
-                case 7:
-                    result.setPoints(6);
-                    break;
-                case 8:
-                    result.setPoints(4);
-                    break;
-                case 9:
-                    result.setPoints(2);
-                    break;
-                case 10:
-                    result.setPoints(1);
-                    break;
-                default:
-                    result.setPoints(0);
-            }
+            result.setPoints(result.pointsPerPosition[result.getPosition()]);
 
             em.persist(result);
 
