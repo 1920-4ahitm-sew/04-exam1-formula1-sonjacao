@@ -79,7 +79,35 @@ public class InitBean {
      * @param teamFileName
      */
     private void readTeamsAndDriversFromFile(String teamFileName) {
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/" + teamFileName)));
+            br.readLine();
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] row = line.split(";");
 
+                Team team = new Team();
+                Driver driver1 = new Driver();
+                Driver driver2 = new Driver();
+
+                team.setName(row[0]);
+                em.persist(team);
+                team = em.find(Team.class, team.getId());
+
+                driver1.setName(row[1]);
+                driver1.setTeam(team);
+                driver2.setName(row[2]);
+                driver2.setTeam(team);
+
+                em.persist(driver1);
+                em.persist(driver2);
+
+
+                persistTeamAndDrivers(row);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
