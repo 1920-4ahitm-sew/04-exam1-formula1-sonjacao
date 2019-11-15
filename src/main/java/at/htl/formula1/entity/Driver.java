@@ -1,6 +1,7 @@
 package at.htl.formula1.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Formula1 - Driver
@@ -12,7 +13,7 @@ import javax.persistence.*;
 @NamedQueries({
         @NamedQuery(name = "Driver.findByName", query = "select d from Driver d where d.name = :NAME")
 })
-public class Driver {
+public class Driver implements Serializable {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
