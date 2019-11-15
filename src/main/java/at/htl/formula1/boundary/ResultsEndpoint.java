@@ -11,6 +11,7 @@ import javax.json.JsonObjectBuilder;
 import javax.json.JsonValue;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -89,5 +90,15 @@ public class ResultsEndpoint {
     }
 
 
+    @GET
+    @Path("all")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Object[]> getPointsOfDrivers() {
+        List<Object[]> driverPoints = em
+                .createNamedQuery("Result.getPointsOfAllDrivers", Object[].class)
+                .getResultList();
+
+        return driverPoints;
+    }
 
 }
