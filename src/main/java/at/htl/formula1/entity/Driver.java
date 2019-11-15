@@ -1,5 +1,6 @@
 package at.htl.formula1.entity;
 
+import javax.json.JsonValue;
 import javax.persistence.*;
 import java.io.Serializable;
 
