@@ -9,6 +9,9 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "F1_TEAM")
+@NamedQueries({
+        @NamedQuery(name = "Team.findByTeamname", query = "select t from Team t where t.name = :TEAMNAME")
+})
 public class Team {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
