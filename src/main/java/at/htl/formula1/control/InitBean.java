@@ -13,7 +13,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -34,7 +36,7 @@ public class InitBean {
     @Inject
     ResultsRestClient client;
 
-
+    @Transactional
     public void init(@Observes @Initialized(ApplicationScoped.class) Object init) {
 
         readTeamsAndDriversFromFile(TEAM_FILE_NAME);
@@ -49,7 +51,24 @@ public class InitBean {
      * @param racesFileName
      */
     private void readRacesFromFile(String racesFileName) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/" + racesFileName)));
+            br.readLine();
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] row = line.split(";");
+
+                Race race = new Race();
+                race.setId(Long.parseLong(row[0]));
+                race.setCountry(row[1]);
+                race.setDate(LocalDate.parse(row[2], dtf));
+                em.persist(race);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

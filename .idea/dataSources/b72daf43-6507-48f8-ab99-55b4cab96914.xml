@@ -2,7 +2,7 @@
 <dataSource name="db@localhost">
   <database-model serializer="dbm" dbms="DERBY" family-id="DERBY" format-version="4.16">
     <root id="1">
-      <ServerVersion>10.15.1.3</ServerVersion>
+      <ServerVersion>10.14.2.0</ServerVersion>
     </root>
     <schema id="2" parent="1" name="APP">
       <Current>1</Current>
@@ -36,14 +36,17 @@
       <Position>3</Position>
       <DataType>BIGINT|-5s</DataType>
     </column>
-    <index id="20" parent="13" name="SQL0000000014-a35ec2ce-016e-6be3-dd48-00000f3083c0">
+    <index id="20" parent="13" name="SQL191115134052370">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="21" parent="13" name="SQL0000000018-a8d482ec-016e-6be3-dd48-00000f3083c0">
+    <index id="21" parent="13" name="SQL191115134053270">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>TEAM_ID</ColNames>
     </index>
-    <key id="22" parent="13" name="SQL0000000014-a35ec2ce-016e-6be3-dd48-00000f3083c0">
+    <key id="22" parent="13" name="SQL191115134052370">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
@@ -66,11 +69,13 @@
       <Position>3</Position>
       <DataType>DATE|91s</DataType>
     </column>
-    <index id="27" parent="14" name="SQL0000000015-6901c2d6-016e-6be3-dd48-00000f3083c0">
+    <index id="27" parent="14" name="SQL191115134052610">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="28" parent="14" name="SQL0000000015-6901c2d6-016e-6be3-dd48-00000f3083c0">
+    <key id="28" parent="14" name="SQL191115134052610">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
@@ -99,17 +104,21 @@
       <Position>5</Position>
       <DataType>BIGINT|-5s</DataType>
     </column>
-    <index id="34" parent="15" name="SQL0000000016-1d4682dc-016e-6be3-dd48-00000f3083c0">
+    <index id="34" parent="15" name="SQL191115134052830">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="35" parent="15" name="SQL0000000019-0bc202f0-016e-6be3-dd48-00000f3083c0">
+    <index id="35" parent="15" name="SQL191115134053410">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>DRIVER_ID</ColNames>
     </index>
-    <index id="36" parent="15" name="SQL0000000020-6eb382f4-016e-6be3-dd48-00000f3083c0">
+    <index id="36" parent="15" name="SQL191115134053560">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>RACE_ID</ColNames>
     </index>
-    <key id="37" parent="15" name="SQL0000000016-1d4682dc-016e-6be3-dd48-00000f3083c0">
+    <key id="37" parent="15" name="SQL191115134052830">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
@@ -136,11 +145,13 @@
       <Position>2</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <index id="42" parent="16" name="SQL0000000017-e30582e4-016e-6be3-dd48-00000f3083c0">
+    <index id="42" parent="16" name="SQL191115134053060">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="43" parent="16" name="SQL0000000017-e30582e4-016e-6be3-dd48-00000f3083c0">
+    <key id="43" parent="16" name="SQL191115134053060">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
