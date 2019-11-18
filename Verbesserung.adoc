@@ -1,0 +1,44 @@
+#### Testverbesserung von Sonja Cao
+
+====== InitBean
+
+.Falsch: Charset fehlt
+
+[source, java]
+----
+BufferedReader br = new BufferedReader(
+                    new InputStreamReader(getClass()
+                            .getResourceAsStream("/" + teamFileName));
+----
+
+.Richtig:
+
+[source, java]
+----
+BufferedReader br = new BufferedReader(
+                    new InputStreamReader(getClass()
+                            .getResourceAsStream("/" + teamFileName),
+                            StandardCharsets.UTF_8));
+----
+
+====== Result
+
+.Falsch: keine GROUP BY Klausel
+
+[source, java]
+----
+@NamedQuery(
+        name = "Result.getPointsOfAllDrivers",
+        query = "select distinct r.driver, r.points from Result r"
+)
+----
+
+.Richtig:
+
+[source, java]
+----
+@NamedQuery(
+        name = "Result.getPointsOfAllDrivers",
+        query = "select r.driver.name, sum(r.points) from Result r group by r.driver.name"
+)
+----
