@@ -54,7 +54,10 @@ public class InitBean {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
         try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/" + racesFileName)));
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(getClass()
+                            .getResourceAsStream("/" + racesFileName),
+                            StandardCharsets.UTF_8));
             br.readLine();
             String line;
             while ((line = br.readLine()) != null) {
@@ -80,7 +83,10 @@ public class InitBean {
      */
     private void readTeamsAndDriversFromFile(String teamFileName) {
         try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/" + teamFileName)));
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(getClass()
+                            .getResourceAsStream("/" + teamFileName),
+                            StandardCharsets.UTF_8));
             br.readLine();
             String line;
             while ((line = br.readLine()) != null) {

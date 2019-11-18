@@ -36,16 +36,16 @@
       <Position>3</Position>
       <DataType>BIGINT|-5s</DataType>
     </column>
-    <index id="20" parent="13" name="SQL191115134052370">
+    <index id="20" parent="13" name="SQL191118100214710">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="21" parent="13" name="SQL191115134053270">
+    <index id="21" parent="13" name="SQL191118100215450">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>TEAM_ID</ColNames>
     </index>
-    <key id="22" parent="13" name="SQL191115134052370">
+    <key id="22" parent="13" name="SQL191118100214710">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -53,7 +53,7 @@
     <foreign-key id="23" parent="13" name="FKOBLT9GMJOLNL2VVXRBCHS7G2X">
       <ColNames>TEAM_ID</ColNames>
       <RefTableName>F1_TEAM</RefTableName>
-      <RefKeyName>SQL0000000017-e30582e4-016e-6be3-dd48-00000f3083c0</RefKeyName>
+      <RefKeyName>SQL191118100215280</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <column id="24" parent="14" name="ID">
@@ -69,12 +69,12 @@
       <Position>3</Position>
       <DataType>DATE|91s</DataType>
     </column>
-    <index id="27" parent="14" name="SQL191115134052610">
+    <index id="27" parent="14" name="SQL191118100214930">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="28" parent="14" name="SQL191115134052610">
+    <key id="28" parent="14" name="SQL191118100214930">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -104,20 +104,20 @@
       <Position>5</Position>
       <DataType>BIGINT|-5s</DataType>
     </column>
-    <index id="34" parent="15" name="SQL191115134052830">
+    <index id="34" parent="15" name="SQL191118100215080">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="35" parent="15" name="SQL191115134053410">
+    <index id="35" parent="15" name="SQL191118100215620">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>DRIVER_ID</ColNames>
     </index>
-    <index id="36" parent="15" name="SQL191115134053560">
+    <index id="36" parent="15" name="SQL191118100215750">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>RACE_ID</ColNames>
     </index>
-    <key id="37" parent="15" name="SQL191115134052830">
+    <key id="37" parent="15" name="SQL191118100215080">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -125,13 +125,13 @@
     <foreign-key id="38" parent="15" name="FKAGXXKO742I0IFICTFFYB402SB">
       <ColNames>DRIVER_ID</ColNames>
       <RefTableName>F1_DRIVER</RefTableName>
-      <RefKeyName>SQL0000000014-a35ec2ce-016e-6be3-dd48-00000f3083c0</RefKeyName>
+      <RefKeyName>SQL191118100214710</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <foreign-key id="39" parent="15" name="FKPR2SRJNHK8H63QNM8HOYFYYD6">
       <ColNames>RACE_ID</ColNames>
       <RefTableName>F1_RACE</RefTableName>
-      <RefKeyName>SQL0000000015-6901c2d6-016e-6be3-dd48-00000f3083c0</RefKeyName>
+      <RefKeyName>SQL191118100214930</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <column id="40" parent="16" name="ID">
@@ -145,12 +145,12 @@
       <Position>2</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <index id="42" parent="16" name="SQL191115134053060">
+    <index id="42" parent="16" name="SQL191118100215280">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="43" parent="16" name="SQL191115134053060">
+    <key id="43" parent="16" name="SQL191118100215280">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
